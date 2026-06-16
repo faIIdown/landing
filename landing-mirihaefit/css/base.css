@@ -1,0 +1,172 @@
+@import url('../fonts/Pretendard/pretendard.css');
+@import url('../fonts/xeicon/xeicon.min.css');
+@import url('../fonts/MaterialSymbolsSharp/MaterialSymbolsSharp.css');
+
+html {
+  --width: 90%;
+  --width-padd: 50px;
+  --gray-dark: #2c2e3d;
+  --gray-mid: #6f737a;
+  --gray-light: #9ea3ab;
+  --gray-border: #dde0e4;
+  --gray-pale: #f2f3f6;
+  --white: #fff;
+  --top-overlay: linear-gradient(180deg, rgba(255, 255, 255, 1) 40%, rgba(255, 255, 255, 0) 100%);
+  --main: #ff7101;
+  --yellow: #fdd000;
+  --yellow-deep: #efb300;
+  --orange: #ff7900;
+  --green: #009944;
+  --blue: #3b66cb;
+  --sale: #fe5f57;
+  --red: #ea342b;
+  --violet: #5418d4;
+  --red-light: #fe5f57;
+  --red-deep: #c30a00;
+  --green: #009944;
+  --main-light: #1da3ec;
+  --hotpink: #ff368d;
+  --mint-blue: #00c2d5;
+  --mint-deep: #009fae;
+  --phone-ratio: 1/1;
+  --top-h: 88px;
+  --page-t: 100px;
+  --main2: var(--mint-blue);
+  --main3: var(--blue);
+  --main4: var(--violet);
+}
+
+/* 공통 */
+* {
+  font-family: -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Pretendard', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+img {
+  border: none;
+  vertical-align: top;
+  max-width: 100%;
+}
+
+html,
+body {
+  color: var(--gray-dark);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  color: var(--gray-dark);
+}
+
+.motion-enabled .page-intro .title .left > *,
+.motion-enabled .overview h2,
+.motion-enabled .overview .text h3,
+.motion-enabled .overview__questions p,
+.motion-enabled .overview__statement,
+.motion-enabled .primary-hero__copy .eyebrow,
+.motion-enabled .primary-hero__copy h2,
+.motion-enabled .primary-hero__copy .text,
+.motion-enabled .primary-highlights li,
+.motion-enabled .strength > li,
+.motion-enabled .page-trainer .title .eyebrow,
+.motion-enabled .page-trainer .title h1,
+.motion-enabled .page-trainer .title .text,
+.motion-enabled .page-trainer .btnset,
+.motion-enabled .page-support .split > li,
+.motion-enabled .page-download .title > *,
+.motion-enabled .page-notice .title,
+.motion-enabled .page-notice .item {
+  opacity: 0;
+  visibility: hidden;
+  transform: translate3d(0, 80px, 0);
+}
+
+body,
+input,
+textarea,
+select,
+table {
+  font-size: 18px;
+  letter-spacing: -0.05em;
+}
+
+span {
+  font-size: inherit;
+}
+
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 0.2s;
+  font-size: inherit;
+}
+
+a:hover {
+  color: var(--main);
+}
+textarea {
+  border: 1px solid var(--gray-border);
+  width: 100%;
+  height: 6em;
+  padding: 20px;
+  vertical-align: top;
+  &:focus {
+    outline: 0;
+    border: 1px solid var(--gray-dark);
+  }
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'] {
+  border: none;
+  padding: 20px 0;
+  border-radius: 3px;
+  outline: none;
+  &::placeholder {
+    color: var(--gray-light);
+  }
+}
+
+input {
+  -webkit-appearance: none;
+}
+
+input[type='checkbox'] + label:before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  vertical-align: middle;
+  background-color: transparent;
+  border-radius: 3px;
+  border: none;
+  box-sizing: border-box;
+  margin-right: 10px;
+  background: var(--gray-border) url(../images/input/checkbox-check.svg) no-repeat center center;
+  border-radius: 50%;
+}
+
+input[type='checkbox'] + label {
+  align-items: center;
+  cursor: pointer;
+}
+
+input[type='checkbox']:checked + label:before {
+  background-size: auto 40%;
+  border: none;
+  transition: 0.2s;
+  background-color: var(--main);
+}

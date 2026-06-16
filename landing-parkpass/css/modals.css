@@ -1,0 +1,340 @@
+/* Modal */
+.modal {
+  width: 100%;
+  height: 0%;
+  z-index: -1;
+  position: fixed;
+  overflow: hidden;
+
+  .modal-in {
+    transition: 0.2s;
+    overflow-y: auto;
+    background-color: var(--white);
+    box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.2);
+    max-width: 96%;
+    padding: 40px;
+    word-break: keep-all;
+    position: relative;
+    margin-top: -200%;
+    max-height: 100%;
+    min-width: 40%;
+
+    .close {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      width: 24px;
+      height: 1px;
+      padding: 12px 0;
+
+      &::before {
+        content: '';
+        border-top: 1px solid var(--gray-dark);
+        transform: rotate(45deg);
+        display: block;
+        margin-top: -1px;
+      }
+
+      &::after {
+        content: '';
+        border-top: 1px solid var(--gray-dark);
+        transform: rotate(-45deg);
+        display: block;
+        margin-top: -1px;
+      }
+    }
+  }
+}
+
+.modal-poped {
+  overflow: hidden;
+
+  .modal.privacy {
+    z-index: 5 !important;
+  }
+
+  .modal.active {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    display: flex;
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modal .modal-in {
+    margin-top: 0;
+  }
+
+  .modal .modal-in h2 {
+    margin-bottom: 30px;
+    color: var(--gray-dark);
+    font-size: 1.8rem;
+  }
+
+  .wrap {
+    filter: blur(50px);
+    transition: 0.2s;
+  }
+}
+
+.auth-modal {
+  width: min(720px, 92vw);
+  min-width: 0;
+  max-width: none;
+
+  .auth-modal__text {
+    margin-bottom: 24px;
+
+    p {
+      color: var(--gray-mid);
+      line-height: 1.5;
+    }
+  }
+
+  .auth-switch {
+    font-size: 0.875em;
+    color: var(--gray-mid);
+    text-decoration: underline;
+    width: fit-content;
+  }
+
+  .form {
+    margin-top: 0;
+
+    .agree {
+      padding-top: 0;
+      border-bottom: 0;
+    }
+
+    dl {
+      border-bottom: 1px solid var(--gray-border);
+
+      dt {
+        width: 110px;
+        padding: 20px 0;
+      }
+
+      dd input {
+        padding: 20px 0;
+      }
+    }
+
+    a.button {
+      margin-top: 24px;
+    }
+  }
+}
+
+.modal-in.purchase-modal {
+  .modal & {
+    padding: 0;
+    max-height: 100%;
+    .modal-in {
+    }
+    > h2 {
+      padding: 24px 24px;
+      margin-bottom: 0;
+    }
+    .purchase-body {
+      padding: 0 24px 24px;
+      overflow: hidden;
+    }
+    @media (max-width: 812px) {
+      width: 100%;
+      .purchase-body {
+        padding: 0 15px 15px;
+      }
+      > h2 {
+        padding-bottom: 15px;
+      }
+      .close {
+        top: 24px;
+      }
+      .ticket-summary {
+        padding: 20px;
+      }
+    }
+  }
+  display: flex;
+  flex-direction: column;
+  .purchase-body {
+    display: grid;
+
+    .ticket-summary {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 24px 26px;
+      border-radius: 1em;
+      color: var(--white);
+      background: linear-gradient(135deg, #ffc886 0%, #fc6b93 100%);
+      box-shadow: 0 18px 34px rgba(252, 107, 147, 0.16);
+      align-items: flex-start;
+      margin-bottom: 16px;
+      .ticket-summary__copy {
+        display: grid;
+        gap: 6px;
+        align-content: start;
+      }
+
+      .title {
+        font-size: 1.5em;
+        line-height: 1.15;
+        letter-spacing: -0.04em;
+      }
+
+      .ticket-summary__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 12px;
+        font-size: 0.95rem;
+        color: rgba(255, 255, 255, 0.9);
+
+        span {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+
+          + span::before {
+            content: '•';
+            opacity: 0.6;
+          }
+        }
+      }
+
+      .period {
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .ticket-summary__day {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        color: var(--white);
+        font-size: 0.95rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        height: 100%;
+        gap: 15px;
+        h3 {
+          font-size: 2.1em;
+          font-weight: 200;
+        }
+        .btn {
+          padding: 8px 12px;
+          background-color: #fff;
+          border-radius: 10em;
+          color: #fc6b93;
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+          }
+        }
+      }
+    }
+
+    .payment-section {
+      display: grid;
+      gap: 16px;
+      /* border-radius: 0.6em; */
+      background: var(--white);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+
+      .actions {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .purchase-buy {
+        min-width: 160px;
+      }
+
+      .dropdown {
+        width: 100%;
+        > a {
+          padding: 20px;
+          width: 100%;
+          display: flex;
+          gap: 12px;
+          .dropdown__value {
+            flex-grow: 1;
+          }
+          .material-symbols-sharp {
+            color: inherit;
+          }
+        }
+        .material-symbols-sharp {
+          font-size: 1.2em;
+          color: var(--gray-light);
+        }
+        & > ul {
+          width: 100%;
+          top: auto;
+          bottom: calc(100% + 8px);
+          left: 0;
+          right: auto;
+        }
+      }
+    }
+  }
+  .purchase-modal__body {
+    display: grid;
+    gap: 24px;
+  }
+
+  .purchase-modal__member {
+    padding: 24px;
+    border: 1px solid var(--gray-border);
+    border-radius: 20px;
+
+    h3 {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+      line-height: 1.25;
+    }
+
+    p {
+      color: var(--gray-mid);
+      line-height: 1.55;
+    }
+  }
+
+  .purchase-modal__ticket {
+    padding: 24px;
+    border: 1px solid var(--gray-border);
+    border-radius: 20px;
+    background: var(--gray-pale);
+
+    .eyebrow {
+      margin-bottom: 8px;
+    }
+
+    h3 {
+      font-size: 1.75em;
+      margin-bottom: 12px;
+      line-height: 1.25;
+    }
+
+    p {
+      color: var(--gray-mid);
+      line-height: 1.55;
+    }
+  }
+
+  .purchase-modal__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  a.button {
+    margin-top: 20px;
+  }
+}
+

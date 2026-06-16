@@ -1,0 +1,110 @@
+/* purchase modal */
+
+.list.horizon {
+  display: flex;
+  font-size: 1em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1em;
+  overflow-y: auto;
+  &.ticket-list {
+    background-color: var(--gray-pale);
+    > li {
+      background-color: var(--white);
+      padding: 20px;
+    }
+    > h3 {
+      font-size: 1.3em;
+      top: 0;
+      position: sticky;
+      z-index: 2;
+      background: linear-gradient(180deg, var(--gray-pale) 60%, transparent 100%);
+      padding: 16px 20px;
+    }
+  }
+  > li {
+    padding: 16px 18px;
+    margin: 0 12px 12px;
+    border-radius: 18px;
+    background: var(--white-bg);
+    margin-bottom: 12px;
+    .infos {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .info {
+        display: grid;
+        gap: 4px;
+
+        h3 {
+          font-size: 1.2em;
+          color: var(--gray-dark);
+        }
+
+        .day {
+          font-size: 1em;
+          color: var(--gray-mid);
+          font-weight: 400;
+        }
+
+        .info-sub {
+          margin-top: 2px;
+        }
+      }
+    }
+
+    .outview {
+      opacity: 0.8;
+      mix-blend-mode: multiply;
+      white-space: nowrap;
+      align-items: center;
+      display: inline-flex;
+      gap: 6px;
+      line-height: 1;
+      font-size: 0.9em;
+      dt {
+        font-weight: 700;
+      }
+
+      dd {
+        margin-right: 12px;
+        white-space: normal;
+        word-break: keep-all;
+
+        &.date {
+          font-weight: 400;
+          color: var(--gray);
+        }
+      }
+    }
+  }
+}
+@media (max-width: 812px) {
+  .purchase-modal {
+    .purchase-body {
+      .ticket-summary {
+        .title {
+          font-size: 1.6rem;
+        }
+
+        .ticket-summary__day {
+          margin-left: 0;
+        }
+      }
+
+      .payment-section {
+        .actions {
+          justify-content: stretch;
+        }
+
+        .purchase-buy {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .btn-download {
+    display: flex;
+  }
+}

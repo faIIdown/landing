@@ -1,0 +1,100 @@
+html {
+  --main: #01b777;
+  --phone-ratio: 1/0.75;
+}
+.gnb {
+  & .gnb-in {
+    & .logo {
+      img {
+        height: 26px;
+      }
+      @media (max-width: 768px) {
+        img {
+          height: 22px;
+        }
+      }
+    }
+  }
+}
+.rounding-card {
+  --sec: 3s;
+  position: absolute;
+  width: 100%;
+  aspect-ratio: 1206/717;
+  top: 12%;
+  z-index: 1;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-size: cover;
+    pointer-events: none;
+    transition: opacity calc(var(--sec) * 0.16) ease-in-out;
+    will-change: opacity;
+  }
+
+  &::before {
+    background-image: url(../images/img/rounding-card.png);
+    opacity: 1;
+  }
+
+  &::after {
+    background-image: url(../images/img/rounding-card-disabled.png);
+    opacity: 0;
+  }
+
+  &.is-weather-disabled {
+    &::before {
+      opacity: 0;
+    }
+
+    &::after {
+      opacity: 1;
+    }
+  }
+}
+
+.primary-hero {
+  & .primary-hero__screen {
+    .status-bar {
+      background: linear-gradient(var(--white) 30%, color-mix(in srgb, var(--white) 60%, transparent) 100%);
+      backdrop-filter: blur(15px);
+
+      &.none {
+        background: none;
+        backdrop-filter: initial;
+      }
+    }
+  }
+}
+
+.weather {
+  position: absolute;
+  z-index: 2;
+  width: 37%;
+  top: 9%;
+  right: 5%;
+  aspect-ratio: 435/550;
+  overflow: hidden;
+
+  .swiper-wrapper,
+  .swiper-slide {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    position: relative;
+  }
+
+  img {
+    position: absolute;
+    top: 12%;
+    right: 8%;
+    width: 100%;
+  }
+}

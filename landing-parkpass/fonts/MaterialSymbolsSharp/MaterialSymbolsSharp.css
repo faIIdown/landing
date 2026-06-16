@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'Material Symbols Sharp';
+  font-style: normal;
+  font-weight: 100 700;
+  font-display: swap;
+  src: url('MaterialSymbolsSharp.woff2') format('woff2');
+}
+.material-symbols-sharp {
+  font-family: 'Material Symbols Sharp';
+}
