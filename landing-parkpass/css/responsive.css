@@ -1,13 +1,6 @@
 /* 반응형 */
-@media (max-width: 1500px) {
-  html {
-    --width: 1360px;
-  }
-}
+
 @media (max-width: 1400px) {
-  html {
-    --width: 1260px;
-  }
   body,
   input,
   textarea,
@@ -76,7 +69,7 @@
 
 @media (max-width: 768px) {
   html {
-    --width: calc(100% - 50px);
+    --width: calc(100% - 60px);
     --top-h: initial;
     --page-t: 40px;
   }
@@ -185,12 +178,10 @@
   }
 
   .gnb {
+    justify-content: center;
     .gnb-in {
       margin: initial;
-      font-size: 0.875em;
-      width: 100%;
-      max-width: initial;
-      padding: 0 24px;
+      font-size: 0.85em;
       .logo {
         padding: 24px 0;
 

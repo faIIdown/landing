@@ -98,3 +98,46 @@ html {
     width: 100%;
   }
 }
+/* 임시 링크와 QR 생성시 삭제 */
+.title.head {
+  .right {
+    display: none;
+  }
+}
+.gnb {
+  & .gnb-in {
+    & .dropdown {
+      ul {
+        &::after {
+          content: '아직 앱이\A준비중이에요';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(255, 255, 255, 0.8);
+          backdrop-filter: blur(5px);
+          color: initial;
+          white-space: pre;
+          text-align: center;
+          font-size: 1.2em;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 812px) {
+  .btn-download {
+    display: none;
+  }
+  .page-intro {
+    .title.head {
+      padding-right: 0px;
+      h1 {
+      }
+    }
+  }
+}
