@@ -22,11 +22,13 @@ $(function () {
     return height;
   }
 
-  $('.dropdown > a').click(function (e) {
+  $(document).on('click', '.dropdown > a', function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     var $dropdown = $(this).parent();
+    var $menu = $dropdown.children('ul');
+    var isOpen = $menu.is(':visible');
     var isMobile = window.matchMedia('(max-width: 720px)').matches;
     var mobileUrl = $(this).data('mobile-url');
 
@@ -35,8 +37,14 @@ $(function () {
       return;
     }
 
-    $dropdown.siblings('.dropdown').children('ul').slideUp('fast');
-    $dropdown.children('ul').slideToggle('fast');
+    $('.dropdown').not($dropdown).children('ul').stop(true, true).slideUp('fast');
+
+    if (isOpen) {
+      $menu.stop(true, true).slideUp('fast');
+      return;
+    }
+
+    $menu.stop(true, true).slideDown('fast');
   });
 
   $('.dropdown--form ul a').click(function (e) {

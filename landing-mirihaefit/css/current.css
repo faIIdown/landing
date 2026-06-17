@@ -1,3 +1,8 @@
+html {
+  --phone-ratio: 1/1;
+  --main: #ff7101;
+}
+
 .page-trainer {
   --main: #ed3872;
 }
